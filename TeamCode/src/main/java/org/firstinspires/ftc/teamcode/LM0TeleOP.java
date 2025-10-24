@@ -72,8 +72,8 @@ public class LM0TeleOP extends RobotLinearOpMode {
         odo = hardwareMap.get(GoBildaPinpointDriver.class, "odo");
 
         //Measure the offsets from the center of the pinpoint device
-        //xOffset is the amount in the y-direction that the x-pod is mounted
-        //yOffset is the amount in the x-direction that the y-pod is mounted
+        //xOffset is the amount in the y-direction from the pinpoint computer that the x-pod is mounted
+        //yOffset is the amount in the x-direction from the pinpoint computer that the y-pod is mounted
         odo.setOffsets(4.5,13.2, DistanceUnit.CM);
         odo.setEncoderResolution(GoBildaPinpointDriver.GoBildaOdometryPods.goBILDA_4_BAR_POD);
         odo.setEncoderDirections(GoBildaPinpointDriver.EncoderDirection.FORWARD, GoBildaPinpointDriver.EncoderDirection.FORWARD);
@@ -140,7 +140,7 @@ public class LM0TeleOP extends RobotLinearOpMode {
                 b1Pressed = true;
             } else if (gamepad1.b && b1Pressed) {
                 intake.setPower(0);
-                b1Pressed = true;
+                b1Pressed = false;
             }
             
 
